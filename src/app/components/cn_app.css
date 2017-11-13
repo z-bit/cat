@@ -1,0 +1,19 @@
+section {
+    min-height: 98vh;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    /* no flex rules */
+}
+main {
+    flex: 1 0 auto;
+    overflow: auto;
+}
+footer {
+    background: darkblue;
+    color: white;
+    padding: 10px;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+}

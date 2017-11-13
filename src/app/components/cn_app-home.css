@@ -1,0 +1,10 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+mat-card {
+    width: 60%;
+    height: 60%;
+}
+
+mat-grid-tile {
+    padding: 30px;
+}

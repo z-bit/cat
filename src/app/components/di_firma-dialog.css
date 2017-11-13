@@ -1,0 +1,12 @@
+mat-card {
+    height: 270px;
+    width: 300px;
+    background-color: lightsteelblue;
+}
+td {
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+.right {
+    float: right;
+}

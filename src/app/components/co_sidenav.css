@@ -1,0 +1,10 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.sidenav {
+    padding: 20px;
+    background-color: lightsteelblue;
+}
+.right {
+    float: right;
+    cursor: pointer;
+}

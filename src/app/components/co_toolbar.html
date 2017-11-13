@@ -1,0 +1,50 @@
+<mat-toolbar class="toolbar">
+  <button class="button" mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon class="icon">menu</mat-icon>
+  </button>
+  <mat-menu class="menu" #menu="matMenu">
+    <button
+      class="button"
+      mat-menu-item
+      *ngFor="let module of modules"
+      (click)="selectedFromMenu.emit(module)"
+    >
+      <img height="20px" src="{{module.avatarLink}}">
+      <span>&nbsp;&nbsp;{{module.titel}}</span>
+    </button>
+  </mat-menu>
+  &nbsp;&nbsp;
+  {{caption}}
+  &nbsp;&nbsp;
+  <div class="left">
+    <img height="50" src="assets/cat_450x340.png">
+  </div>
+  &nbsp;&nbsp;
+  {{banner.titel}}
+  &nbsp;&nbsp;
+  <span class="fill"></span>
+
+  <div    class="firma"
+          *ngIf="firma"
+          (click) = "openFirmaDialog()">
+    <button class="button" mat-icon-button>
+      <mat-icon class="icon">business</mat-icon>
+    </button>
+    {{ firma.name }}
+  </div>
+  &nbsp; &nbsp; &nbsp;
+
+  <div *ngIf="user">
+                <span class="user"
+                      (click)="openUserDialog()">
+                    <button class="button" mat-icon-button>
+                        <mat-icon class="icon">face</mat-icon>
+                    </button>
+                    {{ user.name }}
+                    &nbsp;
+                </span>
+    <button class="button" mat-icon-button  (click)="logout.emit()">
+      <mat-icon class="icon">close</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

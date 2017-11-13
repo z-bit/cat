@@ -1,0 +1,74 @@
+<h3>bitte anmelden ...</h3>
+<div>
+  <mat-card>
+    <mat-card-title>mit Personal-Nummer</mat-card-title>
+    <mat-card-subtitle>
+      ausreichend für die meisten Arbeiten
+      &nbsp; <br><br><br>
+    </mat-card-subtitle>
+
+    <mat-input-container>
+      <input mdInput #pnrInput
+             placeholder="Personal-Nummer"
+             type="text"
+             tabindex="1"
+             (keyup.enter)="sendPnr()"
+      >
+    </mat-input-container>
+    <br>
+    <button mat-button
+            tabindex="5"
+            #btPnr
+            (click)="sendPnr()"
+    >Anmelden</button>
+    <br>
+    <img
+      #spinPnr
+      *ngIf="showSpinPnr"
+      src="../../assets/ajax_loader_gray_32.gif"
+    >
+    <br>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>mit Care Login</mat-card-title>
+    <mat-card-subtitle>
+      notwendig für vollen Funtionsumfang,
+      empfohlen für Serviceberater und Lagermitarbeiter
+    </mat-card-subtitle>
+
+    <mat-input-container>
+      <input mdInput #loginName
+             placeholder="Care Login"
+             type="text"
+             tabindex="2" >
+      <br>
+    </mat-input-container>
+    <mat-input-container>
+      <input mdInput #loginPass
+             placeholder="Care Passwort"
+             type="password"
+             tabindex="3"
+             (keyup.enter)="sendLogin()"
+      >
+    </mat-input-container>
+    <button mat-button
+            tabindex="4"
+            #btLogin
+            (click)="sendLogin()"
+    >Anmelden</button>
+    <br>
+    <img
+      #spinLogin
+      *ngIf="showSpinLogin"
+      src="../../assets/ajax_loader_gray_32.gif"
+    >
+    <br>
+  </mat-card>
+  <br>
+  <span>
+    &nbsp; <br>
+    <b>Tab: </b> springt zur nächsten Eingabe<br>
+    <b>Enter: </b> sch(l)ießt die Eingabe ab
+  </span>
+</div>

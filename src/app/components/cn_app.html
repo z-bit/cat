@@ -1,0 +1,26 @@
+<section>
+  <header>
+    <cat-toolbar
+      caption="Cat"
+      [banner]="module$ | async"
+      [firma]="firma$ | async"
+      [user]= "user$  | async"
+      [modules]="moduleList"
+      (logout)="logout()"
+      (sidenav)="sidenavToggle()"
+      (selectedFromMenu)="navigate($event)"
+    ></cat-toolbar>
+  </header>
+  <main>
+    <mat-sidenav-container>
+
+      <router-outlet></router-outlet>
+
+      <cat-sidenav
+        [isOpen]="sidenavIsOpen"
+        (closed)="sidenavToggle()"
+      ></cat-sidenav>
+    </mat-sidenav-container>
+  </main>
+  <footer>Schmolck GmbH & Co. KG</footer>
+</section>

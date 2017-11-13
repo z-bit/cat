@@ -1,0 +1,77 @@
+<br>
+<br>
+<br>
+<mat-card class="center">
+  <h1>Cleo Inventur <b>{{ invJahr }}</b> für
+    Firma   <b>{{ invFirma }}</b> -
+    Filiale <b>{{ invFil }}</b> -
+    Lager   <b>{{ invLager }}</b>
+  </h1>
+  <br>
+  <span class="right">
+                <mat-select
+                  placeholder="Jahr"
+                  [(ngModel)]="invJahr"
+                  floatPlaceholder="always">
+                    <mat-option *ngFor="let jahr of jahre" [value]="jahr">
+                        {{ jahr }}
+                    </mat-option>
+                </mat-select>
+            </span>
+  <span class="right">
+                <mat-select
+                  placeholder="Lager"
+                  [(ngModel)]="invLager"
+                  floatPlaceholder="always">
+                    <mat-option *ngFor="let lager of lagers[invFil]" [value]="lager">
+                        {{ lager }}
+                    </mat-option>
+                </mat-select>
+            </span>
+  <span class="right">
+                <mat-select
+                  placeholder="Filiale"
+                  [(ngModel)]="invFil"
+                  (ngModelChange)="onFilChanged()"
+                  floatPlaceholder="always">
+                    <mat-option *ngFor="let fil of fils" [value]="fil">
+                        {{ fil }}
+                    </mat-option>
+                </mat-select>
+            </span>
+
+  <br>
+
+  <br>
+  <br>
+  <mat-tab-group>
+    <mat-tab label="Laufende Invenuren">
+      <cat-inv-laufend
+        [invJahr]="invJahr"
+        [gridData]="dataLaufend"
+        (lfdInvSelected)="onLfdSelected($event)"
+      ></cat-inv-laufend>
+    </mat-tab>
+    <mat-tab label="Abgeschlossene Inventuren">
+      <cat-inv-abgeschlossen
+        [invJahr]="invJahr"
+        [gridData]="dataAbgeschlossen"
+        (abgInvSelected)="onAbgSelected($event)"
+      ></cat-inv-abgeschlossen>
+      <br>
+      <p *ngIf="!abgInvSelected">
+        Für den Druck einer <strong>Zählliste</strong> bitte erst die betraffende Inventur auswählen (anklicken).
+      </p>
+      <button mat-button  class="right">Differenzliste</button>
+      <button mat-button  class="right"
+              (click)="getZaehlliste()"
+              *ngIf="abgInvSelected"
+      >Zählliste</button>
+      <br>
+    </mat-tab>
+    <mat-tab label="Liste">
+      benutzt PdfListService
+    </mat-tab>
+  </mat-tab-group>
+  lfd: {{laufendesJahr}}
+</mat-card>

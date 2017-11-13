@@ -1,0 +1,12 @@
+.right {
+    position: relative;
+    float: right;
+    margin-left: 20px;
+}
+.center {
+    width: 800px;
+    margin: 0 auto;
+}
+b {
+    color: blue;
+}

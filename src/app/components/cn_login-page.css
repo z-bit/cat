@@ -1,0 +1,17 @@
+div {
+    float: left;
+}
+span {
+    padding-top: 20px;
+
+}
+button, img {
+    float: right;
+}
+mat-card {
+    margin-left: 20px;
+    float: left;
+    height: 200px;
+    width: 300px;
+    background-color: lightsteelblue;
+}

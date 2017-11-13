@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-title>Firma</mat-card-title>
+  <table>
+    <tr><td><small>Firma:</small>         </td><td> {{ firma.fa }}</td></tr>
+    <tr><td><small>Filiale:</small>       </td><td> {{ firma.fi }}</td></tr>
+    <tr><td><small>Name:</small>          </td><td> {{ firma.name }}</td></tr>
+    <tr><td><small>alle Filialen:</small> </td><td> {{ fils }}</td></tr>
+    <tr><td><small>IP-Adressen:</small>   </td><td> {{ firma.ip }}</td></tr>
+    <tr><td><small>Arbeitsplatz:</small>  </td><td> {{ firma.client }}</td> </tr>
+  </table>
+  <mat-card-actions>
+                <span class="right">
+                    <a mat-fab (click)="dialogRef.close()">
+                        <mat-icon>check</mat-icon>
+                    </a>
+                </span>
+  </mat-card-actions>
+  <br>
+
+</mat-card>

@@ -1,0 +1,16 @@
+<mat-grid-list cols="5" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let modul of moduleList">
+    <mat-card *ngIf="modul.titel">
+      <mat-card-title>{{modul.titel}}</mat-card-title>
+      <mat-card-subtitle>{{modul.untertitel}}</mat-card-subtitle>
+      <img mat-card-avatar src="{{modul.avatarLink}}">
+
+
+        <mat-card-content>{{modul.beschreibung}}</mat-card-content>
+
+
+    </mat-card>
+
+  </mat-grid-tile>
+
+</mat-grid-list>
